@@ -7,6 +7,9 @@
         android2:title="@string/new_crime"
         android2:icon="@drawable/ic_menu_add"
         app:showAsAction="ifRoom|withText"/>
-
+    <item android2:id="@+id/show_subtitle"
+        android2:title="@string/show_subtitle"
+        app:showAsAction="ifRoom"
+        />
 
 </menu>
