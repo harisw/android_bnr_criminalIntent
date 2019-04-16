@@ -10,6 +10,7 @@ import com.geoquiz.harisw.criminalintent.database.CrimeCursorWrapper;
 import com.geoquiz.harisw.criminalintent.database.CrimeDbSchema;
 import com.geoquiz.harisw.criminalintent.database.CrimeDbSchema.CrimeTable;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -81,6 +82,11 @@ public class CrimeLab {
         mDatabase.update(CrimeTable.NAME, values,
                             CrimeTable.Cols.UUID + " = ?",
                             new String[] { uuidString});
+    }
+
+    public File getPhotoFile(Crime crime) {
+        File filesDir = mContext.getFilesDir();
+        return new File(filesDir, crime.getPhotoFilename());
     }
 
     private static ContentValues getContentValues(Crime crime) {
